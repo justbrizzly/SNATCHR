@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root {
+    --bg: #120a22;
+    --card: #1d1232;
+    --line: #34224f;
+    --text: #fff3ea;
+    --muted: #b49fc9;
+    --a: #ff2e88;
+    --b: #ff7a18;
+    --c: #ffd60a;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    width: 280px;
+    background: radial-gradient(120% 80% at 50% 0%, #2e124e 0%, var(--bg) 70%);
+    color: var(--text);
+    font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 16px;
+  }
+  header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  header img { width: 36px; height: 36px; }
+  h1 {
+    font-size: 22px; font-weight: 900; letter-spacing: -0.5px; font-style: italic;
+    filter: drop-shadow(0 0 8px rgba(255, 70, 120, .45));
+    background: linear-gradient(90deg, var(--a), var(--b), var(--c));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tag { color: var(--muted); font-size: 11px; }
+  .row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; margin-bottom: 10px;
+  }
+  .row small { display: block; color: var(--muted); font-size: 11px; }
+  .switch { position: relative; width: 36px; height: 20px; flex: none; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .slider {
+    position: absolute; inset: 0; border-radius: 20px;
+    background: var(--line); cursor: pointer; transition: .2s;
+  }
+  .slider::before {
+    content: ""; position: absolute; width: 14px; height: 14px; left: 3px; top: 3px;
+    border-radius: 50%; background: #fff; transition: .2s;
+  }
+  input:checked + .slider { background: linear-gradient(90deg, var(--a), var(--b), var(--c)); }
+  input:checked + .slider::before { transform: translateX(16px); }
+  button {
+    width: 100%; border: 0; border-radius: 10px; padding: 10px;
+    font: inherit; font-weight: 800; color: #1a0b1f; cursor: pointer;
+    box-shadow: 0 0 18px rgba(255, 90, 60, .35);
+    background: linear-gradient(90deg, var(--a), var(--b), var(--c));
+  }
+  button:active { transform: scale(.98); }
+  #status { min-height: 16px; margin-top: 8px; text-align: center; color: var(--muted); font-size: 11px; }
+  footer {
+    margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);
+    text-align: center; color: var(--muted); font-size: 11px;
+  }
+  footer b { color: var(--c); }
+</style>
+</head>
+<body>
+  <header>
+    <img src="icons/icon48.png" alt="">
+    <div>
+      <h1>SNATCHR</h1>
+      <div class="tag">Right-click any image or video → Save media here</div>
+    </div>
+  </header>
+
+  <label class="row">
+    <span>Unblock right-click<small>Overrides sites that disable it</small></span>
+    <span class="switch">
+      <input type="checkbox" id="unlock">
+      <span class="slider"></span>
+    </span>
+  </label>
+
+  <button id="saveAll">Save all media on this page</button>
+  <div id="status"></div>
+
+  <footer>Made by your friendly neighborhood bear <b>Brizzly</b> 🐻</footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

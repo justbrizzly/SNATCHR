@@ -1,4 +1,7 @@
 # SNATCHR
+
+*Made by your friendly neighborhood bear Brizzly* 🐻
+
 Right-click → **Save media here** on any image or video, including ones hidden under transparent overlays or on sites that block right-click.
 
 ## Install
@@ -25,4 +28,4 @@ Right-click → **Save media here** on any image or video, including ones hidden
 - **DRM-protected video** (Netflix, Disney+, Prime, etc.). Encrypted media can't be grabbed this way and this extension doesn't attempt it.
 
 ---
-Made by your friendly neighborhood bear **Brizzly**. 🐻
+Made by your friendly neighborhood bear **Brizzly**.
